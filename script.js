@@ -11,7 +11,7 @@ function setup() {
   frameRate(60);
   let cnv = createCanvas(window_w, window_h, WEBGL);
   cnv.parent("canvas-holder");
-  background("#888888");
+  background(100, 100, 100);
 }
 
 // DRAW funtions
@@ -98,6 +98,7 @@ function draw() {
       parallel(x, y);
     }
   }
+
   x = mouseX;
   y = mouseY;
   ellipse(x, y, size, size);
@@ -108,7 +109,7 @@ function keyPressed() {
   if (key == 'u') {
     size = size + 10;
   } else if (key == 'j') {
-    size = size - 2;
+    size = size - 10;
   } else if (key == 'k') {
     fill(random(0, 255), random(0, 255),
          random(0, 255), random(0, 100));
@@ -117,6 +118,6 @@ function keyPressed() {
   } else if (key== 'q') { // not CODED
     background(random(0, 255), random(0, 255), random(0, 255));
   } else if (key == 'e') {
-    save("drawWWWee.png");
+    save("drawWWWee.jpg");
   }
 }
