@@ -1,7 +1,10 @@
-let size;
-let numero;
+let cnv;
+let g;
 let window_w;
 let window_h;
+
+let size;
+let numero;
 let x;
 let y;
 
@@ -18,8 +21,9 @@ function setup() {
   x = 0;
   y = 0
 
+  g = createGraphics(500, 500, WEBGL);
   frameRate(60);
-  let cnv = createCanvas(window_w, window_h, WEBGL);
+  cnv = createCanvas(window_w, window_h, WEBGL);
   cnv.parent("canvas-holder");
 
   background(100, 100, 100);
@@ -45,6 +49,16 @@ function draw() {
   translate(-(window_w / 2) , -(window_h / 2));
 
   if (keyIsPressed == true) {
+    if (key == ' ') {
+      x = random(0, window_w);
+      y = random(0, window_h);
+      commands = split("nbvcxzfpg", '');
+      key = random(commands);
+      print(key);
+    }
+    if (key == 'f') {
+      glitch();
+    }
     if (key == 'm') {
       noStroke();
     }
